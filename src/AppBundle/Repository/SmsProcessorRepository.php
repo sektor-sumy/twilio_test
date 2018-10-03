@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Repository;
 
+use Doctrine\DBAL\LockMode;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -10,6 +11,8 @@ class SmsProcessorRepository extends EntityRepository
 {
     /**
      * @return array
+     *
+     * @throws \Doctrine\ORM\TransactionRequiredException
      */
     public function getUnSentSms()
     {
@@ -17,6 +20,7 @@ class SmsProcessorRepository extends EntityRepository
             ->select('sms_processor')
             ->where('sms_processor.status IS NULL')
             ->getQuery()
+            ->setLockMode(LockMode::PESSIMISTIC_WRITE)
             ->getResult()
         ;
 

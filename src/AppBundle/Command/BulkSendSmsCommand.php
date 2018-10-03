@@ -26,7 +26,10 @@ class BulkSendSmsCommand extends ContainerAwareCommand
     /**
      * @param InputInterface  $input
      * @param OutputInterface $output
+     *
      * @return int|null|void
+     *
+     * @throws \Doctrine\ORM\TransactionRequiredException
      * @throws \Twilio\Rest\Api\V2010\Account\TwilioException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -38,10 +41,18 @@ class BulkSendSmsCommand extends ContainerAwareCommand
         /** @var SmsProcessor $sms */
         foreach ($unSentSmsArr as $sms) {
             try {
-                $result = $twilioService->sendSms($sms->getPhone(), $sms->getMessage());
-                $sms->setStatus($result->status)
-                    ->setUpdatedAt(new \DateTime())
-                    ->setResult($result);
+                $now = new \DateTime();
+                $sms->setUpdatedAt($now);
+                try {
+                    $result = $twilioService->sendSms($sms->getPhone(), $sms->getMessage());
+                    $sms->setStatus($result->status)
+                        ->setResult($result);
+                } catch (\Exception $e) {
+                    $result = [
+                        'error' => $e->getMessage(),
+                    ];
+                    $sms->setResult($result);
+                }
                 $entityManager->flush();
             } catch (\Exception $e) {
                 $output->write($e->getMessage());
