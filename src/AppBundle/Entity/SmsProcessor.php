@@ -43,7 +43,7 @@ class SmsProcessor
     private $status;
 
     /**
-     * @var string
+     * @var array
      *
      * @ORM\Column(name="result", type="json_array", nullable=true)
      */
