@@ -10,18 +10,20 @@ use Doctrine\ORM\EntityRepository;
 class SmsProcessorRepository extends EntityRepository
 {
     /**
+     * @param $rows
+     *
      * @return array
      *
      * @throws \Doctrine\ORM\TransactionRequiredException
      */
-    public function getUnSentSms()
+    public function getUnSentSms($rows)
     {
         $result = $this->createQueryBuilder('sms_processor')
             ->select('sms_processor')
             ->where('sms_processor.status IS NULL')
             ->getQuery()
             ->setLockMode(LockMode::PESSIMISTIC_WRITE)
-            ->setMaxResults(1000)
+            ->setMaxResults($rows)
             ->getResult()
         ;
 

@@ -9,6 +9,7 @@ use AppBundle\Entity\User;
 use AppBundle\Entity\NotificationEvent;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -20,6 +21,11 @@ class BulkSendSmsCommand extends ContainerAwareCommand
     {
         $this
             ->setName('cariba:send-sms')
+            ->addOption('smsRows', null,
+                InputOption::VALUE_OPTIONAL,
+                'How many rows should be processed (default 100)?',
+                1000
+            )
             ->setDescription('Send sms by twilio.');
     }
 
@@ -35,11 +41,16 @@ class BulkSendSmsCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $rows = (int) $input->getOption('smsRows');
+        if ($rows <= 0) {
+            $rows = 1000;
+        }
+
         $output->write('Start sms notification.');
         $entityManager = $this->getContainer()->get('doctrine')->getEntityManager();
         $twilioService = $this->getContainer()->get('twilio.service');
         $entityManager->getConnection()->beginTransaction();
-        $unSentSmsArr = $entityManager->getRepository(SmsProcessor::class)->getUnSentSms();
+        $unSentSmsArr = $entityManager->getRepository(SmsProcessor::class)->getUnSentSms($rows);
         try {
             /** @var SmsProcessor $sms */
             foreach ($unSentSmsArr as $sms) {
