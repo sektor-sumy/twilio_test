@@ -29,24 +29,26 @@ class BulkSendSmsCommand extends ContainerAwareCommand
      *
      * @return int|null|void
      *
+     * @throws \Doctrine\DBAL\ConnectionException
      * @throws \Doctrine\ORM\TransactionRequiredException
      * @throws \Twilio\Rest\Api\V2010\Account\TwilioException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->write('Start sms notification.');
-        $twilioService = $this->getContainer()->get('twilio.service');
         $entityManager = $this->getContainer()->get('doctrine')->getEntityManager();
+        $twilioService = $this->getContainer()->get('twilio.service');
+        $entityManager->getConnection()->beginTransaction();
         $unSentSmsArr = $entityManager->getRepository(SmsProcessor::class)->getUnSentSms();
-        /** @var SmsProcessor $sms */
-        foreach ($unSentSmsArr as $sms) {
-            try {
+        try {
+            /** @var SmsProcessor $sms */
+            foreach ($unSentSmsArr as $sms) {
                 $now = new \DateTime();
                 $sms->setUpdatedAt($now);
                 try {
                     $result = $twilioService->sendSms($sms->getPhone(), $sms->getMessage());
-                    $sms->setStatus($result->status)
-                        ->setResult($result);
+                    $sms->setStatus('sent')
+                        ->setResult($result->toArray());
                 } catch (\Exception $e) {
                     $result = [
                         'error' => $e->getMessage(),
@@ -54,10 +56,13 @@ class BulkSendSmsCommand extends ContainerAwareCommand
                     $sms->setResult($result);
                 }
                 $entityManager->flush();
-            } catch (\Exception $e) {
-                $output->write($e->getMessage());
             }
+            $entityManager->getConnection()->commit();
+        } catch (\Exception $e) {
+            $entityManager->getConnection()->rollBack();
+            $output->write($e->getMessage());
         }
+
         $output->write('Finish.');
     }
 }

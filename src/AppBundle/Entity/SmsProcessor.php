@@ -43,9 +43,9 @@ class SmsProcessor
     private $status;
 
     /**
-     * @var array
+     * @var string
      *
-     * @ORM\Column(name="json_array", type="text", nullable=true)
+     * @ORM\Column(name="result", type="json_array", nullable=true)
      */
     private $result;
 
@@ -167,7 +167,7 @@ class SmsProcessor
     /**
      * Set result
      *
-     * @param string $result
+     * @param array $result
      *
      * @return SmsProcessor
      */

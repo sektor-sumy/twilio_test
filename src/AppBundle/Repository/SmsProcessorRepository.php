@@ -21,6 +21,7 @@ class SmsProcessorRepository extends EntityRepository
             ->where('sms_processor.status IS NULL')
             ->getQuery()
             ->setLockMode(LockMode::PESSIMISTIC_WRITE)
+            ->setMaxResults(1000)
             ->getResult()
         ;
 
