@@ -15,4 +15,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/web/js/*
+/web/fonts/*
+/web/css/*
 .idea/
