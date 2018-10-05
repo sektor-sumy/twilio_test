@@ -2,11 +2,7 @@
 
 namespace AppBundle\Command;
 
-use AppBundle\Entity\NotificationSetting;
 use AppBundle\Entity\SmsProcessor;
-use AppBundle\Entity\Training;
-use AppBundle\Entity\User;
-use AppBundle\Entity\NotificationEvent;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

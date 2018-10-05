@@ -41,6 +41,12 @@ services:
             - "%twilio.sid%"
             - "%twilio.token%"
             - "%twilio.from%"
+    email.service:
+        class: AppBundle\Service\EmailService
+        public: true
+        arguments:
+            - "@rage_notification.email.message"
+            - "@doctrine.orm.entity_manager"
 
     twig.extension.grunt_asset_extension:
         class: AppBundle\Twig\GruntAssetExtension

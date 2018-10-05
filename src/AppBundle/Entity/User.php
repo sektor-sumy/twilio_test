@@ -42,6 +42,14 @@ class User extends BaseUser
     private $lastName;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
+     *
+     */
+    private $phone;
+
+    /**
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      *
      * @var \DateTime
@@ -127,6 +135,26 @@ class User extends BaseUser
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
 
         return $this;
     }
