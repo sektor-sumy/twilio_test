@@ -1,0 +1,15 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="panel panel-body login-form">
+    <div class="text-center">
+        <h5 class="content-group">{{ 'login.password_recovery'|trans }}</h5>
+    </div>
+
+    <div>
+        <a class="btn btn-primary btn-block" href="{{ path('fos_user_security_login') }}">{{ 'login.go_to_login_page'|trans }}<i class="icon-circle-right2 position-right"></i></a>
+    </div>
+</div>
+{% endblock %}

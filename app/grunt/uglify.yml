@@ -1,0 +1,21 @@
+main:
+  options:
+    mangle:
+      except: [ "jQuery" ]
+    sourceMap: true
+#    beautiful: true
+#    compress: false
+  files:
+    web/js/app.js:
+      - app/Resources/js/app/**/*.js
+
+vendors:
+  options:
+    mangle:
+      except: [ "jQuery" ]
+    sourceMap: false
+  files:
+    web/js/main_head.js:
+      - vendor-web/jquery/dist/jquery.js
+    web/js/main_vendor.js:
+      - vendor-web/bootstrap/dist/js/bootstrap.js

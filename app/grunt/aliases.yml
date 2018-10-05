@@ -1,0 +1,17 @@
+default:
+  tasks:
+    - clean
+    - copy
+    - less:dev_css
+    - less:dev_email
+    - uglify
+    - watch
+
+prod:
+  tasks:
+    - clean
+    - copy
+    - less:prod_css
+    - less:prod_email
+    - uglify
+    - assets_versioning:prod

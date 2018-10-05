@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <body class="layout-boxed frontend">
+        <div class="page-container">
+            <div class="page-content">
+                <div class="content-wrapper">
+                    <div class="content pb-20">
+                        <section>
+                            {% block content %}{% endblock %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block javascripts %}
+            <script src="{{ grunt_asset('js/main_vendor.js') }}"></script>
+        {% endblock %}
+        <div class="controls">
+            {% block controls %}
+                {% include ":Layout:flashbag.html.twig" %}
+            {% endblock %}
+        </div>
+        <div class="main-footer">
+            <span>Powered by Mihail Bogdanov</span>
+        </div>
+    </body>
+{% endblock %}

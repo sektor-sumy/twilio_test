@@ -1,0 +1,245 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@3.10.10
+3 info using node@v6.14.3
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData grunt
+20 silly mapToRegistry name grunt
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'grunt',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'grunt',
+23 silly mapToRegistry   name: 'grunt',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/grunt
+25 verbose request uri https://registry.npmjs.org/grunt
+26 verbose request no auth needed
+27 info attempt registry request try #1 at 6:34:01 PM
+28 verbose request id 37d7397cb5d0138c
+29 http request GET https://registry.npmjs.org/grunt
+30 http 200 https://registry.npmjs.org/grunt
+31 verbose headers { date: 'Thu, 04 Oct 2018 15:34:02 GMT',
+31 verbose headers   'content-type': 'application/json; charset=UTF-8',
+31 verbose headers   'transfer-encoding': 'chunked',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'set-cookie': [ '__cfduid=d151ff9b559ecde68e7216fa7d8ae26071538667241; expires=Fri, 04-Oct-19 15:34:01 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+31 verbose headers   'cf-cache-status': 'HIT',
+31 verbose headers   'cache-control': 'max-age=300',
+31 verbose headers   'cf-ray': '4648b5d61da390ad-DME',
+31 verbose headers   etag: 'W/"ab3e72be74e5f9b9d2a2102bcae55ae4"',
+31 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+31 verbose headers   'last-modified': 'Mon, 06 Aug 2018 14:29:44 GMT',
+31 verbose headers   vary: 'accept-encoding, accept',
+31 verbose headers   server: 'cloudflare',
+31 verbose headers   'content-encoding': 'gzip' }
+32 silly get cb [ 200,
+32 silly get   { date: 'Thu, 04 Oct 2018 15:34:02 GMT',
+32 silly get     'content-type': 'application/json; charset=UTF-8',
+32 silly get     'transfer-encoding': 'chunked',
+32 silly get     connection: 'keep-alive',
+32 silly get     'set-cookie': [ '__cfduid=d151ff9b559ecde68e7216fa7d8ae26071538667241; expires=Fri, 04-Oct-19 15:34:01 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+32 silly get     'cf-cache-status': 'HIT',
+32 silly get     'cache-control': 'max-age=300',
+32 silly get     'cf-ray': '4648b5d61da390ad-DME',
+32 silly get     etag: 'W/"ab3e72be74e5f9b9d2a2102bcae55ae4"',
+32 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+32 silly get     'last-modified': 'Mon, 06 Aug 2018 14:29:44 GMT',
+32 silly get     vary: 'accept-encoding, accept',
+32 silly get     server: 'cloudflare',
+32 silly get     'content-encoding': 'gzip' } ]
+33 verbose get saving grunt to /data/.npm/registry.npmjs.org/grunt/.cache.json
+34 verbose correctMkdir /data/.npm correctMkdir not in flight; initializing
+35 verbose makeDirectory /data/.npm creation not in flight; initializing
+36 silly makeDirectory /data/.npm uid: 1000 gid: 33
+37 silly resolveWithNewModule grunt@1.0.3 checking installable status
+38 silly cache add args [ 'grunt@^1.0.0', null ]
+39 verbose cache add spec grunt@^1.0.0
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'grunt@^1.0.0',
+40 silly cache add   scope: null,
+40 silly cache add   escapedName: 'grunt',
+40 silly cache add   name: 'grunt',
+40 silly cache add   rawSpec: '^1.0.0',
+40 silly cache add   spec: '>=1.0.0 <2.0.0',
+40 silly cache add   type: 'range' }
+41 silly addNamed grunt@>=1.0.0 <2.0.0
+42 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for grunt
+43 silly addNameRange { name: 'grunt', range: '>=1.0.0 <2.0.0', hasData: false }
+44 silly mapToRegistry name grunt
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'grunt',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'grunt',
+47 silly mapToRegistry   name: 'grunt',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/grunt
+49 verbose addNameRange registry:https://registry.npmjs.org/grunt not in flight; fetching
+50 verbose request uri https://registry.npmjs.org/grunt
+51 verbose request no auth needed
+52 info attempt registry request try #1 at 6:34:02 PM
+53 http request GET https://registry.npmjs.org/grunt
+54 http 200 https://registry.npmjs.org/grunt
+55 verbose headers { date: 'Thu, 04 Oct 2018 15:34:02 GMT',
+55 verbose headers   'content-type': 'application/json; charset=UTF-8',
+55 verbose headers   'transfer-encoding': 'chunked',
+55 verbose headers   connection: 'keep-alive',
+55 verbose headers   'set-cookie': [ '__cfduid=d4d35d2f11f705df52b3894342809d2bd1538667242; expires=Fri, 04-Oct-19 15:34:02 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+55 verbose headers   'cf-cache-status': 'HIT',
+55 verbose headers   'cache-control': 'max-age=300',
+55 verbose headers   'cf-ray': '4648b5d6edf190ad-DME',
+55 verbose headers   etag: 'W/"ab3e72be74e5f9b9d2a2102bcae55ae4"',
+55 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+55 verbose headers   'last-modified': 'Mon, 06 Aug 2018 14:29:44 GMT',
+55 verbose headers   vary: 'accept-encoding, accept',
+55 verbose headers   server: 'cloudflare',
+55 verbose headers   'content-encoding': 'gzip' }
+56 silly get cb [ 200,
+56 silly get   { date: 'Thu, 04 Oct 2018 15:34:02 GMT',
+56 silly get     'content-type': 'application/json; charset=UTF-8',
+56 silly get     'transfer-encoding': 'chunked',
+56 silly get     connection: 'keep-alive',
+56 silly get     'set-cookie': [ '__cfduid=d4d35d2f11f705df52b3894342809d2bd1538667242; expires=Fri, 04-Oct-19 15:34:02 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+56 silly get     'cf-cache-status': 'HIT',
+56 silly get     'cache-control': 'max-age=300',
+56 silly get     'cf-ray': '4648b5d6edf190ad-DME',
+56 silly get     etag: 'W/"ab3e72be74e5f9b9d2a2102bcae55ae4"',
+56 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+56 silly get     'last-modified': 'Mon, 06 Aug 2018 14:29:44 GMT',
+56 silly get     vary: 'accept-encoding, accept',
+56 silly get     server: 'cloudflare',
+56 silly get     'content-encoding': 'gzip' } ]
+57 verbose get saving grunt to /data/.npm/registry.npmjs.org/grunt/.cache.json
+58 verbose correctMkdir /data/.npm correctMkdir not in flight; initializing
+59 silly addNameRange number 2 { name: 'grunt', range: '>=1.0.0 <2.0.0', hasData: true }
+60 silly addNameRange versions [ 'grunt',
+60 silly addNameRange   [ '0.1.0',
+60 silly addNameRange     '0.1.1',
+60 silly addNameRange     '0.1.2',
+60 silly addNameRange     '0.2.0',
+60 silly addNameRange     '0.2.1',
+60 silly addNameRange     '0.2.2',
+60 silly addNameRange     '0.2.3',
+60 silly addNameRange     '0.2.4',
+60 silly addNameRange     '0.2.5',
+60 silly addNameRange     '0.2.6',
+60 silly addNameRange     '0.2.7',
+60 silly addNameRange     '0.2.8',
+60 silly addNameRange     '0.2.9',
+60 silly addNameRange     '0.2.10',
+60 silly addNameRange     '0.2.11',
+60 silly addNameRange     '0.2.12',
+60 silly addNameRange     '0.2.13',
+60 silly addNameRange     '0.2.14',
+60 silly addNameRange     '0.2.15',
+60 silly addNameRange     '0.3.0',
+60 silly addNameRange     '0.3.1',
+60 silly addNameRange     '0.3.2',
+60 silly addNameRange     '0.3.3',
+60 silly addNameRange     '0.3.4',
+60 silly addNameRange     '0.3.5',
+60 silly addNameRange     '0.3.6',
+60 silly addNameRange     '0.3.7',
+60 silly addNameRange     '0.3.8',
+60 silly addNameRange     '0.3.9',
+60 silly addNameRange     '0.3.10',
+60 silly addNameRange     '0.3.11',
+60 silly addNameRange     '0.3.12',
+60 silly addNameRange     '0.3.13',
+60 silly addNameRange     '0.3.14',
+60 silly addNameRange     '0.3.15',
+60 silly addNameRange     '0.3.16',
+60 silly addNameRange     '0.3.17',
+60 silly addNameRange     '0.4.0',
+60 silly addNameRange     '0.4.1',
+60 silly addNameRange     '0.4.2',
+60 silly addNameRange     '0.4.3',
+60 silly addNameRange     '0.4.4',
+60 silly addNameRange     '0.4.5',
+60 silly addNameRange     '1.0.0-rc1',
+60 silly addNameRange     '1.0.0',
+60 silly addNameRange     '1.0.1',
+60 silly addNameRange     '0.3.13-a',
+60 silly addNameRange     '0.4.0-a',
+60 silly addNameRange     '0.4.0-rc1',
+60 silly addNameRange     '0.4.0-rc2',
+60 silly addNameRange     '0.4.0-rc3',
+60 silly addNameRange     '0.4.0-rc4',
+60 silly addNameRange     '0.4.0-rc5',
+60 silly addNameRange     '0.4.0-rc6',
+60 silly addNameRange     '0.4.0-rc7',
+60 silly addNameRange     '0.4.0-rc8',
+60 silly addNameRange     '1.0.2',
+60 silly addNameRange     '1.0.3' ] ]
+61 silly addNamed grunt@1.0.3
+62 verbose addNamed "1.0.3" is a plain semver version for grunt
+63 silly mapToRegistry name grunt
+64 silly mapToRegistry using default registry
+65 silly mapToRegistry registry https://registry.npmjs.org/
+66 silly mapToRegistry data Result {
+66 silly mapToRegistry   raw: 'grunt',
+66 silly mapToRegistry   scope: null,
+66 silly mapToRegistry   escapedName: 'grunt',
+66 silly mapToRegistry   name: 'grunt',
+66 silly mapToRegistry   rawSpec: '',
+66 silly mapToRegistry   spec: 'latest',
+66 silly mapToRegistry   type: 'tag' }
+67 silly mapToRegistry uri https://registry.npmjs.org/grunt
+68 verbose addRemoteTarball https://registry.npmjs.org/grunt/-/grunt-1.0.3.tgz not in flight; adding
+69 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt/-/grunt-1.0.3.tgz',
+69 verbose addRemoteTarball   'b3c99260c51d1b42835766e796527b60f7bba374' ]
+70 info retry fetch attempt 1 at 6:34:02 PM
+71 info attempt registry request try #1 at 6:34:02 PM
+72 http fetch GET https://registry.npmjs.org/grunt/-/grunt-1.0.3.tgz
+73 http fetch 200 https://registry.npmjs.org/grunt/-/grunt-1.0.3.tgz
+74 silly fetchAndShaCheck shasum b3c99260c51d1b42835766e796527b60f7bba374
+75 verbose addTmpTarball /tmp/npm-759-0527d97d/registry.npmjs.org/grunt/-/grunt-1.0.3.tgz not in flight; adding
+76 verbose addTmpTarball already have metadata; skipping unpack for grunt@1.0.3
+77 verbose correctMkdir /data/.npm correctMkdir not in flight; initializing
+78 silly rollbackFailedOptional Starting
+79 silly rollbackFailedOptional Finishing
+80 silly runTopLevelLifecycles Finishing
+81 silly install printInstalled
+82 verbose stack Error: EACCES: permission denied, mkdir '/data/.npm'
+82 verbose stack     at Error (native)
+83 verbose cwd /data/site/twilio_test
+84 error Linux 4.9.93-linuxkit-aufs
+85 error argv "/usr/bin/node" "/usr/bin/npm" "install"
+86 error node v6.14.3
+87 error npm  v3.10.10
+88 error path /data/.npm
+89 error code EACCES
+90 error errno -13
+91 error syscall mkdir
+92 error Error: EACCES: permission denied, mkdir '/data/.npm'
+92 error     at Error (native)
+92 error  { Error: EACCES: permission denied, mkdir '/data/.npm'
+92 error     at Error (native)
+92 error   errno: -13,
+92 error   code: 'EACCES',
+92 error   syscall: 'mkdir',
+92 error   path: '/data/.npm',
+92 error   parent: 'twilio_test' }
+93 error Please try running this command again as root/Administrator.
+94 verbose exit [ -13, true ]

@@ -1,0 +1,5 @@
+    Hi {{ user.name }},
+
+    {{ message|raw }}
+
+    {{ url('user.login.by.email', {'hash': user.hash}) }}

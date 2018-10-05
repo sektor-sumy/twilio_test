@@ -1,0 +1,9 @@
+options:
+  versionsMapFile: ./var/assets.json
+  versionsMapTrimPath: web/
+prod:
+  options:
+    tasks:
+      - less:prod_css
+      - uglify:main
+      - uglify:vendors

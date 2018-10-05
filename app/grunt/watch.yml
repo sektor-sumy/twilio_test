@@ -1,0 +1,10 @@
+less_css:
+  files:
+    - "app/Resources/css/**/*.less"
+  tasks:
+    - less:dev_css
+uglify:
+  files:
+    - "app/Resources/js/**/*.js"
+  tasks:
+    - uglify:main

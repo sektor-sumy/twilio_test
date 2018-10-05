@@ -30,7 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
-
+    templating:
+        engines: ['twig']
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
@@ -75,3 +76,22 @@ doctrine_migrations:
     namespace: DoctrineMigrations
     table_name: migration_versions
     name: Application Migrations
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "%mailer_address%"
+        sender_name: "%mailer_sender%"
+
+rage_notification:
+    email:
+        default:
+            from: "%mailer_address%"
+            reply_to: "%mailer_reply_to%"
+            embed_images:
+                url: "http://%router.request_context.host%/" # website root
+                path: '%kernel.root_dir%/../web/' # real path
+            template_path: :Email # path in twig format
+            css_file: '%kernel.root_dir%/../web/css/email.css'

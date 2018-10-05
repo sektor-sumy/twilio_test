@@ -1,0 +1,22 @@
+{% block flashbag %}
+    {% for message in app.session.flashbag.get('error') %}
+        <div class="pNotify pt-20 hidden" data-class="bg-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('success') %}
+        <div class="pNotify pt-20 hidden" data-class="bg-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="pNotify pt-20 hidden" data-class="bg-info">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('warning') %}
+        <div class="pNotify pt-20 hidden" data-class="bg-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+default:
+  files:
+    -
+      expand: true
+      flatten: true
+      src:
+        - ./vendor-web/bootstrap/fonts/*
+        - ./vendor-web/fontawesome/fonts/*
+      dest: web/fonts
+    -
+      expand: true
+      flatten: false
+      cwd: "./app/Resources/img"
+      src:
+        - "*/**"
+        - "**"
+      dest: web/img

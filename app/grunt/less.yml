@@ -1,0 +1,27 @@
+dev_css:
+  options:
+    optimization: 2
+    dumpLineNumbers: all
+  files:
+    web/css/main.css: app/Resources/css/main.less
+dev_email:
+  options:
+    optimization: 2
+    dumpLineNumbers: all
+  files:
+    web/css/email.css: app/Resources/css/email/main.less
+
+prod_css:
+  options:
+    compress: true
+    yuicompress: true
+    optimization: 2
+  files:
+    web/css/main.css: app/Resources/css/main.less
+prod_email:
+  options:
+    compress: true
+    yuicompress: true
+    optimization: 2
+  files:
+    web/css/email.css: app/Resources/css/email/main.less

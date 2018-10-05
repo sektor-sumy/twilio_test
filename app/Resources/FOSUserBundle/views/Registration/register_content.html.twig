@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-horizontal'}}) }}
+    <div class="panel panel-body login-form">
+        <div class="text-center">
+            <h5 class="content-group">{{ 'login.register_account'|trans }}<small class="display-block">{{ 'login.enter_your_credentials'|trans }}</small></h5>
+        </div>
+
+        {{ form_widget(form) }}
+
+        <div>
+            <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+

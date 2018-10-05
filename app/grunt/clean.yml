@@ -1,0 +1,6 @@
+default:
+  src:
+    - "web/css"
+    - "web/fonts"
+    - "web/js"
+    - "web/img"

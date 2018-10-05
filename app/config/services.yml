@@ -41,3 +41,12 @@ services:
             - "%twilio.sid%"
             - "%twilio.token%"
             - "%twilio.from%"
+
+    twig.extension.grunt_asset_extension:
+        class: AppBundle\Twig\GruntAssetExtension
+        public: true
+        arguments:
+            - "@service_container"
+            - "@twig"
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,11 @@
+{% extends '@App/Email/base.html.twig' %}
+
+{% block content %}
+    Hi, {{ user.name }}
+    <br />
+    {{ message|raw }}
+    <br />
+    <a href="{{ url('user.login.by.email', {'hash': user.hash}) }}">Click here</a>
+    <br />
+{% endblock %}
+
